@@ -1,10 +1,11 @@
 import React from "react";
 import { Nav, Navbar, Container, NavDropdown, Button } from "react-bootstrap";
 import bneticon from "../images/bneticon.png";
+import CartWidgets from "./CartWidgets/CartWidgets"
 
 const NavBar = () => {
   return (
-    <Navbar bg="light" expand="xxxl">
+    <Navbar bg="light" expand="xxxl" className="align-items-baseline">
       <Container className="align-items-baseline">
         <div className="justify-content-start">
           <Navbar.Brand href="#home">
@@ -34,7 +35,9 @@ const NavBar = () => {
           </Button>
           <Button variant="dark">Crear Cuenta</Button>
         </div>
+        
       </Container>
+      <CartWidgets/>
     </Navbar>
   );
 };
