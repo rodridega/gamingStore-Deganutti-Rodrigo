@@ -3,7 +3,7 @@ import { Card, Button, Row, Col } from "react-bootstrap";
 import "./ItemCount.css";
 
 export const ItemCount = () => {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
   const [stock, setStock] = useState(5);
 
   const onMinus = () => {
