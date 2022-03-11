@@ -8,9 +8,11 @@ const ItemListContainer = ({ greeting }) => {
   const [games, setGames] = useState([]);
 
   const getJuegos = new Promise((resolve, reject) => {
+
     setTimeout(() => {
       resolve(juegos);
     }, 2000);
+    
   });
 
   useEffect(() => {
