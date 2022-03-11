@@ -1,3 +1,7 @@
 img{
-    height: 40%;
+    object-fit: cover;
+    object-position: center;  
+}
+.imagen{
+    min-height: 215px;
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, Row, Col, Button } from "react-bootstrap";
-import './Item.css'
+import "./Item.css";
 
 export const Item = ({ game }) => {
   const [counter, setCounter] = useState(1);
@@ -25,13 +25,22 @@ export const Item = ({ game }) => {
 
   return (
     <Col>
-      <Card className="h-200" style={{ width: "18rem"}}>
-        <Card.Img variant="top" src={game.img} className='bg-secondary' style={{ height: '50%'}} />
-        <Card.Body className="text-white bg-secondary border-none" >
+      <Card
+        className="mx-auto mb-3"
+        style={{ width: "18rem", height: "30rem" }}
+      >
+        <div className="imagen">
+          <Card.Img
+            variant="top"
+            src={game.img}
+            className="bg-secondary h-100 overflow-hidden"
+          />
+        </div>
+        <Card.Body className="text-white bg-secondary border-none d-flex flex-column justify-content-between">
           <Card.Title> {game.nombre}</Card.Title>
           <Card.Text className="">{game.descripcion}</Card.Text>
           <Card.Text>Stock: {game.stock}</Card.Text>
-          <Row className="align-items-center justify-content-center">
+          <Row className="align-items-center justify-content-center ">
             <Col xs="auto">
               <Button
                 className="mb-2 px-3 py-1"
@@ -61,6 +70,6 @@ export const Item = ({ game }) => {
           </div>
         </Card.Body>
       </Card>
-      </Col>
+    </Col>
   );
 };
