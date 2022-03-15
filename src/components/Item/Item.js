@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Card, Row, Col, Button } from "react-bootstrap";
+import { ItemDetail } from "../ItemDetail";
 import "./Item.css";
 
-export const Item = ({ game }) => {
+export const Item = ({ game, handleShow }) => {
   const [counter, setCounter] = useState(1);
   const [stock, setStock] = useState(5);
+
 
   const onMinus = () => {
     if (counter <= 0) {
@@ -31,6 +33,7 @@ export const Item = ({ game }) => {
       >
         <div className="imagen">
           <Card.Img
+            onClick={handleShow}
             variant="top"
             src={game.img}
             className="bg-secondary h-100 overflow-hidden"
@@ -71,5 +74,6 @@ export const Item = ({ game }) => {
         </Card.Body>
       </Card>
     </Col>
+
   );
 };

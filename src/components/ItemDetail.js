@@ -1,29 +1,22 @@
 import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
 
 export const ItemDetail = ({ game }) => {
-
-  const handleClose = () => setShow(false);
-
+  const { name, price, image, description } = game;
+  console.log(game);
   return (
-    <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>{game.name} </Modal.Title>
-      </Modal.Header>
-
-      <Modal.Body>
-        <img src={game.image} alt={game.name} />
-        <p>{game.description} </p>
-        <span>{game.price}</span>
-      </Modal.Body>
-
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Close
-        </Button>
-        <Button variant="primary" onClick={handleClose}>
-          Save changes
-        </Button>
-      </Modal.Footer>
-    </Modal>
+    <Container className="border rounded">
+      <Row className="text-white">
+        <Col>
+          <img src={image} alt={name} />
+        </Col>
+        <Col>
+          <h2>{name}</h2>
+          <p>{description} </p>
+          <hr />
+          <p> {price} $</p>
+        </Col>
+      </Row>
+    </Container>
   );
 };

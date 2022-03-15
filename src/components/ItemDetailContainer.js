@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../datos/juegos";
 import { ItemDetail } from "./ItemDetail";
 
@@ -6,7 +6,7 @@ export const ItemDetailContainer = () => {
   const [game, setGame] = useState("");
   const juego = {
     name: "Lost Ark",
-    price: 0,
+    price: 100,
     id: 1,
     description: "RPG de accion",
     image:
@@ -24,8 +24,9 @@ export const ItemDetailContainer = () => {
     getJuego
       .then((res) => setGame(res))
       .catch((err) => console.log(err))
-      .finally(() => console.log("Fin del proceso"));
-  }, []);
-  
-  return <ItemDetail game={game} />;
+      .finally(() => console.log(game));
+      
+  },[]);
+
+  return (<ItemDetail game={game} key={game.id} />);
 };
