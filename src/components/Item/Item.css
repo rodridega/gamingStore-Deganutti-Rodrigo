@@ -1,7 +1,9 @@
-img{
-    object-fit: cover;
-    object-position: center;  
-}
+
 .imagen{
-    min-height: 215px;
+    height: 215px;
+    overflow: auto;
+    border: 1px solid white;
+}
+.imagen img{
+    object-fit: cover;
 }

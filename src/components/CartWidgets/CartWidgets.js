@@ -1,12 +1,12 @@
 import React from "react";
-import cart from "../../images/cart.png";
+import { Link } from "react-router-dom";
 import "./CartWidgets.css";
 
 const CartWidgets = () => {
   return (
-    <a href="#" className="mx-auto">
-      <img src={cart} />
-    </a>
+    <Link to="/" id="carrito">
+      <img src="/images/cart.png" />
+    </Link>
   );
 };
 

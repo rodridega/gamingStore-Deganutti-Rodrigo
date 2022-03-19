@@ -1,0 +1,46 @@
+.itemDetailCard {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 1rem;
+    box-shadow: 0px 0px 10px white;
+}
+
+.imgCard {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.gameDesc {
+    font-size: 12px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .itemDetailCard {
+        display: flex;
+        flex-direction: column;
+        margin: 5rem 5rem;
+        box-shadow: 0px 0px 10px white;
+    }
+
+    .gameDesc {
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .itemDetailCard {
+        min-height: 500px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr;
+        margin: 8rem 15rem;
+    }
+
+    .gameDesc {
+        font-size: 1rem;
+    }
+
+}

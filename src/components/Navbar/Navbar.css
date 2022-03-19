@@ -1,0 +1,32 @@
+.nav-link {
+    color: #15171e;
+}
+
+.nav-link:focus, .nav-link:hover {
+    color: #15171e;
+}
+
+.navbar-nav a {
+    margin: 2px 0px;
+    text-align: center;
+}
+
+.navbar>.container {
+    flex-wrap: wrap;
+}
+
+#basic-nav-dropdown {
+    color: #15171e;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav {
+        flex-direction: row !important;
+        padding: 0.5rem;
+    }
+
+    .navbar-nav a {
+        margin: 1rem;
+        text-align: center;
+    }
+}
