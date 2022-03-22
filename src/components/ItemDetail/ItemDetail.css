@@ -32,11 +32,11 @@
 
 @media (min-width: 1200px) {
     .itemDetailCard {
-        min-height: 500px;
+        min-height: 700px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 2fr;
-        margin: 8rem 15rem;
+        margin: 5rem 15rem;
     }
 
     .gameDesc {
