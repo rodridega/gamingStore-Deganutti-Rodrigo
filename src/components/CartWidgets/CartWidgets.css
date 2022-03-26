@@ -2,5 +2,6 @@
 @media (min-width: 768px) {
     #carrito{
         margin-right: 2rem;
+        font-size: 25px;
     }
 }

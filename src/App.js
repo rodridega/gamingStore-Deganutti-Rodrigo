@@ -6,30 +6,35 @@ import "./App.css";
 import { Nosotros } from "./components/Nosotros/Nosotros";
 import { Contacto } from "./components/Contacto/Contacto";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
+import { CartProvider } from "./context/CartContext";
+import { Carrito } from "./components/Carrito/Carrito";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Navbar />
+    <CartProvider>
+      <BrowserRouter>
+        <div className="App">
+          <Navbar />
 
-        <Routes>
-          <Route
-            path="/"
-            element={<ItemListContainer greeting={"Bienvenido a V-Gaming"} />}
-          />
-          <Route
-            path="/productos/:caterogyId"
-            element={<ItemListContainer />}
-            greeting={"Bienvenido a V-Gaming"}
-          />
-          <Route path="/detail/:gameId" element={<ItemDetailContainer />} />
-          <Route path="/nosotros" element={<Nosotros />} />
-          <Route path="/contacto" element={<Contacto />} />
-          <Route path="/detail" element={<ItemDetailContainer />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={<ItemListContainer greeting={"Bienvenido a V-Gaming"} />}
+            />
+            <Route
+              path="/productos/:caterogyId"
+              element={<ItemListContainer />}
+              greeting={"Bienvenido a V-Gaming"}
+            />
+            <Route path="/detail/:gameId" element={<ItemDetailContainer />} />
+            <Route path="/nosotros" element={<Nosotros />} />
+            <Route path="/contacto" element={<Contacto />} />
+            <Route path="/detail" element={<ItemDetailContainer />} />
+            <Route path="/cart" element={<Carrito />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

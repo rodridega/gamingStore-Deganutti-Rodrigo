@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Row, Col } from "react-bootstrap";
 
-export const ItemCount = ({ stock, onAdd }) => {
-  const [counter, setCounter] = useState(1);
+export const ItemCount = ({ stock, counter, setCounter }) => {
 
   return (
     <>
@@ -35,11 +34,7 @@ export const ItemCount = ({ stock, onAdd }) => {
           </Button>
         </Col>
       </Row>
-      <Row>
-        <Button variant="dark" size={"md"} onClick={onAdd}>
-          Agregar al carrito
-        </Button>
-      </Row>
+      
     </>
   );
 };

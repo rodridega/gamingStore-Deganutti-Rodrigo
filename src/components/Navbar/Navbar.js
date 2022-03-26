@@ -10,9 +10,8 @@ const NavBar = () => {
     <Navbar bg="light" expand="xxxl" className="justify-content-end">
       <Container className="align-items-baseline">
         <div className="justify-content-start">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand>
             <Link to={"/"}>
-              {" "}
               <img src="/images/bneticon.png" alt="logo" />
             </Link>
           </Navbar.Brand>

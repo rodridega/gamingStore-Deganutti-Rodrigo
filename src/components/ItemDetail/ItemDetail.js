@@ -1,14 +1,30 @@
-import React, { useState } from "react";
-import { Button } from "react-bootstrap";
+import React, { useContext, useState } from "react";
+import { Button, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 import { ItemCount } from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
-export const ItemDetail = ({ nombre, precio, img, description, stock }) => {
-  const [compra, setCompra] = useState(false);
+export const ItemDetail = ({ nombre, precio, img, description, stock, id }) => {
+  const [cantidad, setCantidad] = useState(1);
 
-  const onAdd = () => {
-    setCompra(true);
+  const {agregarCarrito, enCarrito } = useContext(CartContext);
+
+  const handleAgregar = () => {
+    if (cantidad === 0) {
+      return;
+    }
+    if (!enCarrito(id)) {
+      const prodCarrito = {
+        nombre,
+        precio,
+        id,
+        stock,
+        cantidad,
+        img
+      };
+      agregarCarrito(prodCarrito);
+    }
   };
 
   return (
@@ -24,16 +40,24 @@ export const ItemDetail = ({ nombre, precio, img, description, stock }) => {
         {precio !== 0 && (
           <p className="fs-5">O en 12 cuotas de ${parseInt(precio / 12)}</p>
         )}
-        {compra ? (
-          <Link to="/cart" className="mx-auto mt-2">
-            <Button variant="light">Ir al carrito</Button>
+        {enCarrito(id) ? (
+          <Link to="/cart" className="mx-auto">
+            <Button variant="light">Terminar Compra</Button>
           </Link>
         ) : (
-          <ItemCount stock={stock} onAdd={onAdd} />
+          <>
+            <ItemCount
+              stock={stock}
+              counter={cantidad}
+              setCounter={setCantidad}
+            />
+            <Row>
+              <Button variant="dark" size={"md"} onClick={handleAgregar}>
+                Agregar al carrito
+              </Button>
+            </Row>
+          </>
         )}
-        <Link to="/" className="mx-auto mt-2">
-          <Button variant="light">Volver</Button>
-        </Link>
       </div>
     </div>
   );
