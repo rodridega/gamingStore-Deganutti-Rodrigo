@@ -10,7 +10,7 @@ export const Item = ({ game }) => {
     <Col>
       <Card
         className="mx-auto mb-3"
-        style={{ width: "16rem", height: "25rem" }}
+        style={{ width: "20rem", height: "25rem" }}
       >
         <div className="imagen">
           <Card.Img

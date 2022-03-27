@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Nav, Navbar, Container, NavDropdown, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 import CartWidgets from "../CartWidgets/CartWidgets";
 
 import "./Navbar.css";
 
 const NavBar = () => {
+  const { carrito } = useContext(CartContext);
   return (
     <Navbar bg="light" expand="xxxl" className="justify-content-end">
       <Container className="align-items-baseline">

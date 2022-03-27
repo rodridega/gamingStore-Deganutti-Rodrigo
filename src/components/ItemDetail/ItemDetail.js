@@ -42,7 +42,7 @@ export const ItemDetail = ({ nombre, precio, img, description, stock, id }) => {
         )}
         {enCarrito(id) ? (
           <Link to="/cart" className="mx-auto">
-            <Button variant="light">Terminar Compra</Button>
+            <Button variant="light">Terminar mi Compra</Button>
           </Link>
         ) : (
           <>

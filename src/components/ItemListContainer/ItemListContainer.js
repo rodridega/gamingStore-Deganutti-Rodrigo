@@ -24,7 +24,7 @@ const ItemListContainer = ({ greeting }) => {
   }, [caterogyId]);
 
   return (
-    <Container>
+    <Container fluid>
       <h2 className="fs-1 m-4 text-center text-white">
         {caterogyId === undefined ? greeting : caterogyId}
       </h2>
