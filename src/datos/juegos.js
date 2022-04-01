@@ -84,7 +84,7 @@ export const juegos = [
     nombre: "Far Cry 6",
     precio: 1500,
     description:
-      "FLa historia se desarrolla en Yara, una isla ficticia del Caribe, bajo un régimen fascista aparentemente inspirado en el gobierno de Fulgencio Batista, quien ejerció el poder de forma dictatorial en Cuba y anuncia videojuego inspirado en Cuba, un mundo detenido en el tiempo. Por tal motivo el equipo de Ubisoft viajó a Cuba para entrevistarse con antiguos guerrilleros que participaron en el bando revolucionario. ",
+      "La historia se desarrolla en Yara, una isla ficticia del Caribe, bajo un régimen fascista aparentemente inspirado en el gobierno de Fulgencio Batista, quien ejerció el poder de forma dictatorial en Cuba y anuncia videojuego inspirado en Cuba, un mundo detenido en el tiempo. Por tal motivo el equipo de Ubisoft viajó a Cuba para entrevistarse con antiguos guerrilleros que participaron en el bando revolucionario. ",
     img: "https://image.api.playstation.com/vulcan/img/rnd/202106/1514/fkPaEpz998Uu7QaofSj1VIhr.png",
     stock: 5,
     categoria: "Shooter",

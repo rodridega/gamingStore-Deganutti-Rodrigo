@@ -16,7 +16,7 @@ export const Carrito = () => {
       {carrito.length === 0 ? (
         <MensajeCarrito />
       ) : (
-        (carrito.map((prod) => {
+        carrito.map((prod) => {
           return (
             <div key={prod.id} className="d-flex my-3">
               <div className="border rounded mx-4 cardCarrito">
@@ -38,7 +38,7 @@ export const Carrito = () => {
               </div>
             </div>
           );
-        }))
+        })
       )}
 
       <hr />
@@ -46,6 +46,7 @@ export const Carrito = () => {
       <Button variant="danger" onClick={vaciarCarrito}>
         Vaciar Carrito
       </Button>
+      <Button variant="success">Terminar mi compra</Button>
     </Container>
   );
 };

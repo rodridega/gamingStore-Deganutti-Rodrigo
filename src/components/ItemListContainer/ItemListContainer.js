@@ -1,26 +1,36 @@
 import React, { useState, useEffect } from "react";
 import { ItemList } from "../ItemList/ItemList";
 import { Container, Spinner } from "react-bootstrap";
-import { getJuegos } from "../../helpers/getJuegos";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 const ItemListContainer = ({ greeting }) => {
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(false);
 
+
   const { caterogyId } = useParams();
   useEffect(() => {
     setLoading(true);
-    getJuegos()
-      .then((res) => {
-        if (!caterogyId) {
-          setGames(res);
-        } else {
-          setGames(res.filter((game) => game.categoria === caterogyId));
+
+    // armo referencia
+    const juegosRef = collection(db, 'juegos')
+    const q = caterogyId ? query(juegosRef, where('categoria', '==', caterogyId)) : juegosRef
+    // pedir referencia
+    getDocs(q)
+    .then((resp) =>{
+      setGames(resp.docs.map((doc) => {
+        return {
+          id: doc.id,
+          ...doc.data()
         }
-      })
-      .catch((err) => console.log(err))
-      .finally(() => setLoading(false));
+      } ))
+    } )
+    .finally(() =>{
+      setLoading(false)
+    } )
+    
   }, [caterogyId]);
 
   return (

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../../datos/juegos";
-import { getJuegos } from "../../helpers/getJuegos";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 export const ItemDetailContainer = () => {
   const [game, setGame] = useState(null);
@@ -13,12 +14,17 @@ export const ItemDetailContainer = () => {
 
   useEffect(() => {
     setLoading(true);
-    getJuegos()
-      .then((res) => {
-        setGame(res.find((juego) => juego.id === Number(gameId)));
-      })
-      .catch((err) => console.log(err))
-      .finally(() => setLoading(false));
+
+    const docRef = doc(db, 'juegos', gameId);
+
+    getDoc(docRef)
+    .then((doc) => {
+      setGame({id: doc.id, ...doc.data()});
+    })
+    .finally(()=>{
+      setLoading(false)
+    })
+    
   }, [gameId]);
 
   return (
