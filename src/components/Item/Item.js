@@ -31,7 +31,9 @@ export const Item = ({ game }) => {
             </Link>
           </div>
           <hr />
-          <Card.Text>Stock disponible: {stock}</Card.Text>
+          <Card.Text>
+            {stock === 0 ? "Sin Stock" : `Stock disponible: ${stock}`}{" "}
+          </Card.Text>
         </Card.Body>
       </Card>
     </Col>

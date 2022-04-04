@@ -8,6 +8,7 @@ import { Contacto } from "./components/Contacto/Contacto";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartProvider } from "./context/CartContext";
 import { Carrito } from "./components/Carrito/Carrito";
+import { Checkout } from "./components/Checkout/Checkout";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/detail" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Carrito />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </div>
       </BrowserRouter>

@@ -4,6 +4,7 @@ import { CartContext } from "../../context/CartContext";
 import { BsTrash } from "react-icons/bs";
 import "./Carrito.css";
 import { MensajeCarrito } from "../MensajeCarrito/MensajeCarrito";
+import { Link } from "react-router-dom";
 
 export const Carrito = () => {
   const { carrito, totalCarrito, vaciarCarrito, eliminarDelCarrito } =
@@ -43,10 +44,10 @@ export const Carrito = () => {
 
       <hr />
       <h3 className="text-end">Total: ${totalCarrito()} </h3>
-      <Button variant="danger" onClick={vaciarCarrito}>
+      <Button className="mx-2" variant="danger" onClick={vaciarCarrito}>
         Vaciar Carrito
       </Button>
-      <Button variant="success">Terminar mi compra</Button>
+      <Link className="btn btn-success" to='/checkout'>Terminar mi compra</Link>
     </Container>
   );
 };
