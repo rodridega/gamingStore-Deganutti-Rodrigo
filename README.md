@@ -4,7 +4,11 @@ Repositorio de desafios de Coder / Curso React Js
 
 ## Dev: Deganutti Rodrigo
 
-#### Profesora: Elisa Gabriela Zelaya
+#### Profesores: 
+* Elisa Gabriela Zelaya
+* Conrado Lanusse
+* Fredy Alexander Chaparro Castro
+
 
 #### Tutor: Ramiro D'Accorso
 
@@ -18,6 +22,10 @@ En el curso de React Js cree un sitio web para una tienda de Videojuegos, dandol
   Uso de componentes para diseñar la Nav y las Cards
 - [Bootstrap](https://getbootstrap.com/)
   Utilizado para formatos rápidos de la página.
+- [Animate.css](https://animate.style/)
+  Animaciones de las cards
+- [Firebase](https://firebase.google.com/)
+  Usado como base de datos para los productos y ordenes de compra
 
 # Getting Started with Create React App
 

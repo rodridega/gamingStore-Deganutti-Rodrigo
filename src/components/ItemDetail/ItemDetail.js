@@ -28,7 +28,7 @@ export const ItemDetail = ({ nombre, precio, img, description, stock, id }) => {
   };
 
   return (
-    <div className="itemDetailCard">
+    <div className="itemDetailCard animate__animated animate__fadeIn">
       <div className="h-100 w-100 overflow-auto">
         <img className="imgCard" src={img} alt={nombre} />
       </div>
@@ -40,11 +40,20 @@ export const ItemDetail = ({ nombre, precio, img, description, stock, id }) => {
         {precio !== 0 && (
           <p className="fs-5">O en 12 cuotas de ${parseInt(precio / 12)}</p>
         )}
+        
         {enCarrito(id) ? (
           <Link to="/cart" className="mx-auto">
             <Button variant="light">Terminar mi Compra</Button>
           </Link>
-        ) : (
+        ) : 
+        (stock <= 0) ? (
+          <>
+          <p>Sin stock</p>
+          <Link to="/" className="mx-auto">
+            <Button variant="light">Volver a la tienda</Button>
+          </Link>
+          </>
+          ) : (
           <>
             <ItemCount
               stock={stock}
@@ -56,6 +65,9 @@ export const ItemDetail = ({ nombre, precio, img, description, stock, id }) => {
                 Agregar al carrito
               </Button>
             </Row>
+            <Link to="/" className="mx-auto my-3">
+            <Button variant="light">Volver a la tienda</Button>
+          </Link>
           </>
         )}
       </div>
