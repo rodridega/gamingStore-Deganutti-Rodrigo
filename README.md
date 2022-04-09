@@ -24,8 +24,6 @@ En el curso de React Js cree un sitio web para una tienda de Videojuegos, dandol
   Utilizado para formatos rápidos de la página.
 - [Animate.css](https://animate.style/)
   Animaciones de las cards
-- [Firebase](https://firebase.google.com/)
-  Usado como base de datos para los productos y ordenes de compra
 
 ### Base de datos
 -[Firebase](https://firebase.google.com/)
