@@ -19,6 +19,10 @@ En el curso de React Js cree un sitio web para una tienda de Videojuegos, dandol
 - [Bootstrap](https://getbootstrap.com/)
   Utilizado para formatos rápidos de la página.
 
+### Base de datos
+-[Firebase](https://firebase.google.com/)
+  Usada como database para guardar la coleccion de productos
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
