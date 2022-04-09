@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar, Container, NavDropdown, Button } from "react-bootstrap";
+import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import CartWidgets from "../CartWidgets/CartWidgets";
 
@@ -36,15 +36,10 @@ const NavBar = () => {
               <Link to={"/contacto"}>Contacto</Link>
             </NavDropdown.Item>
           </NavDropdown>
-          <Button className="mx-2 btn-sm" variant="dark">
-            Acceder
-          </Button>
-          <Button variant="dark" className="btn-sm">
-            Crear Cuenta
-          </Button>
+          <CartWidgets />
         </div>
       </Container>
-      <CartWidgets />
+      
     </Navbar>
   );
 };

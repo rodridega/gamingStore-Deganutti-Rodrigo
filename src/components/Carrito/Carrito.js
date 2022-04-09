@@ -19,7 +19,10 @@ export const Carrito = () => {
       ) : (
         carrito.map((prod) => {
           return (
-            <div key={prod.id} className="d-flex my-3">
+            <div
+              key={prod.id}
+              className="d-flex my-3 animate__animated animate__lightSpeedInRight"
+            >
               <div className="border rounded mx-4 cardCarrito">
                 <img src={prod.img} alt={prod.nombre} />
               </div>
@@ -43,11 +46,18 @@ export const Carrito = () => {
       )}
 
       <hr />
-      <h3 className="text-end">Total: ${totalCarrito()} </h3>
-      <Button className="mx-2" variant="danger" onClick={vaciarCarrito}>
-        Vaciar Carrito
-      </Button>
-      <Link className="btn btn-success" to='/checkout'>Terminar mi compra</Link>
+
+      {carrito.length !== 0 && (
+        <>
+          <h3 className="text-end">Total: ${totalCarrito()} </h3>
+          <Button className="mx-2" variant="danger" onClick={vaciarCarrito}>
+            Vaciar Carrito
+          </Button>
+          <Link className="btn btn-success" to="/checkout">
+            Terminar mi compra
+          </Link>
+        </>
+      )}
     </Container>
   );
 };

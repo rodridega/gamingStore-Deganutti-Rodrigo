@@ -2,8 +2,6 @@ import {
   collection,
   addDoc,
   Timestamp,
-  updateDoc,
-  getDoc,
   writeBatch,
   query,
   where,
